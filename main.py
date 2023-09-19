@@ -31,4 +31,12 @@ def create_folder_tree(path):
         f.write("")
     with open(os.path.join(path, "requirements.txt_"), "w") as f:
         f.write("")
+        
+    #Ouvrir le fichier utils.py, process.py, train.py en écriture et y écrit une ligne vide.
+    with open(os.path.join(path, "src", "utils.py"), "w") as f:
+        f.write("")
+    with open(os.path.join(path, "src", "process.py"), "w") as f:
+        f.write("")
+    with open(os.path.join(path, "src", "train.py"), "w") as f:
+        f.write("")
 
