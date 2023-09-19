@@ -18,4 +18,7 @@ def create_folder_tree(path):
     #Créer les sous-répertoires suivants dans le répertoire data : cleaned, processed et raw.    
     for sub_folder in ["cleaned", "processed", "raw"]:
         os.makedirs(os.path.join(path, "data", sub_folder))
+        
+    #Créer le sous-répertoire notebooks dans le répertoire models.
+    os.makedirs(os.path.join(path, "models", "notebooks"))
 
