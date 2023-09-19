@@ -21,7 +21,7 @@ Pour exécuter le programme, vous pouvez utiliser un éditeur de texte pour ouvr
 Pour exécuter le programme à partir de la ligne de commande, vous devez vous placer dans le répertoire contenant le fichier Python. Ensuite, vous pouvez exécuter le programme en utilisant la commande suivante :
 
 ```
-python creer_arborescence.py
+python create_folder_tree.py
 ```
 
 **IDE Python**
