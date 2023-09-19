@@ -21,4 +21,14 @@ def create_folder_tree(path):
         
     #Créer le sous-répertoire notebooks dans le répertoire models.
     os.makedirs(os.path.join(path, "models", "notebooks"))
+    
+    #Ouvrir le fichier LICENSE, Makefile, README.md, requirements.txt_, en écriture et y écrit une ligne vide.
+    with open(os.path.join(path, "LICENSE"), "w") as f:
+        f.write("")
+    with open(os.path.join(path, "Makefile"), "w") as f:
+        f.write("")
+    with open(os.path.join(path, "README.md"), "w") as f:
+        f.write("")
+    with open(os.path.join(path, "requirements.txt_"), "w") as f:
+        f.write("")
 
