@@ -10,4 +10,8 @@ def create_folder_tree(path):
     
     #Créer le répertoire s'il n'existe pas déjà.
     os.makedirs(path) 
+    
+    #Créer les sous-répertoires suivants : data, docs, models, reports et src.
+    for folder in ["data", "docs", "models", "reports", "src"]:
+        os.makedirs(os.path.join(path, folder))
 
