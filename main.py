@@ -39,4 +39,9 @@ def create_folder_tree(path):
         f.write("")
     with open(os.path.join(path, "src", "train.py"), "w") as f:
         f.write("")
+        
+#Appeller la fonction create_folder_tree() avec le chemin actuel comme argument.
+#./Users/alwaysgoodapps/Documents/python-folder-tree-generator
+current_path = "."
+create_folder_tree(current_path)
 
