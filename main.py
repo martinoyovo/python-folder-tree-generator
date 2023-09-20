@@ -1,16 +1,27 @@
 #YOVO, KOSSI MARTINO, MASTER 2 DIT
 import os
+import sys
+
+def create_empty_file(file_path):
+    """
+    Cette fonction crée un fichier vide 
+    dont le chemin est file_path
+    """
+
+    with open(file_path, "w") as f:
+        pass
 
 
 #Créer la fonction create_folder_tree().
 def create_folder_tree(path):
     
     #Vérifier si le répertoire existe déjà. Si c'est le cas, la fonction create_folder_tree() renvoie sans rien faire.
-    if os.path.exists(path):
-        return
+    if not os.path.exists(path):
+        os.makedirs(path) 
+
     
-    #Créer le répertoire s'il n'existe pas déjà.
-    os.makedirs(path) 
+    # #Créer le répertoire s'il n'existe pas déjà.
+    # os.makedirs(path) 
     
     #Créer les sous-répertoires suivants : data, docs, models, reports et src.
     for folder in ["data", "docs", "models", "reports", "src"]:
@@ -23,26 +34,28 @@ def create_folder_tree(path):
     #Créer le sous-répertoire notebooks dans le répertoire models.
     os.makedirs(os.path.join(path, "models", "notebooks"))
     
-    #Ouvrir le fichier LICENSE, Makefile, README.md, requirements.txt_, en écriture et y écrit une ligne vide.
-    with open(os.path.join(path, "LICENSE"), "w") as f:
-        f.write("")
-    with open(os.path.join(path, "Makefile"), "w") as f:
-        f.write("")
-    with open(os.path.join(path, "README.md"), "w") as f:
-        f.write("")
-    with open(os.path.join(path, "requirements.txt_"), "w") as f:
-        f.write("")
-        
-    #Ouvrir le fichier utils.py, process.py, train.py en écriture et y écrit une ligne vide.
-    with open(os.path.join(path, "src", "utils.py"), "w") as f:
-        f.write("")
-    with open(os.path.join(path, "src", "process.py"), "w") as f:
-        f.write("")
-    with open(os.path.join(path, "src", "train.py"), "w") as f:
-        f.write("")
-        
-#Appeller la fonction create_folder_tree() avec le chemin actuel comme argument.
-#./Users/alwaysgoodapps/Documents/python-folder-tree-generator
-current_path = "."
-create_folder_tree(current_path)
+    #Créer les fichiers vides LICENSE, Makefile, README.md et requirements.txt_ à la racine
+    create_empty_file(os.path.join(path, "LICENSE"))
+    create_empty_file(os.path.join(path, "Makefile"))
+    create_empty_file(os.path.join(path, "README.md"))
+    create_empty_file(os.path.join(path, "requirements.txt_"))
 
+    #Créer les fichiers vides utils.py, process.py et train.py dans le répertoire src
+    create_empty_file(os.path.join(path, "src", "utils.py"))
+    create_empty_file(os.path.join(path, "src", "process.py"))
+    create_empty_file(os.path.join(path, "src", "train.py"))
+
+
+def main():
+    # Récupérer le chemin (argument de la commande)
+    if len(sys.argv) > 1:
+        path = sys.argv[1]
+    else:
+        path = "."
+
+    #Appeller la fonction create_folder_tree() avec le chemin comme argument.
+    #./Users/alwaysgoodapps/Documents/python-folder-tree-generator
+    create_folder_tree(path)
+
+if __name__ == "__main__":
+    main()
