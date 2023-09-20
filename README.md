@@ -20,8 +20,10 @@ Pour exécuter le programme, vous pouvez utiliser un éditeur de texte pour ouvr
 
 Pour exécuter le programme à partir de la ligne de commande, vous devez vous placer dans le répertoire contenant le fichier Python. Ensuite, vous pouvez exécuter le programme en utilisant la commande suivante :
 
+> chemin_vers_le_dossier est le dossier courant par défaut
+
 ```
-python create_folder_tree.py
+python create_folder_tree.py {chemin_vers_le_dossier}
 ```
 
 **IDE Python**
