@@ -43,6 +43,6 @@ def create_folder_tree(path):
         
 #Appeller la fonction create_folder_tree() avec le chemin actuel comme argument.
 #./Users/alwaysgoodapps/Documents/python-folder-tree-generator
-current_path = "."
+current_path = input("Entrer le chemin vers lequel vous voulez créer l'arborescence: ")
 create_folder_tree(current_path)
 
